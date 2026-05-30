@@ -1,0 +1,153 @@
+@import "../common/AdminsTable.module.css";
+.bodyFont {
+  font-size: 16px;
+}
+.sortHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.sortButton {
+  background: transparent !important;  /* Прозрачная кнопка */
+  border: none !important;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: none !important;
+}
+
+.sortButton:hover {
+  background: transparent !important;
+  opacity: 0.7;
+}
+
+.sortButton:active {
+  background: transparent !important;
+}
+
+.sortIcon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  object-fit: contain;
+}
+
+/* Для колонок, где есть сортировка */
+.columnId,
+.columnViews,
+.columnLikes,
+.columnComments {
+  text-align: center;
+}
+
+.columnId .sortHeader,
+.columnViews .sortHeader,
+.columnLikes .sortHeader,
+.columnComments .sortHeader {
+  justify-content: center;
+}
+/* Колонки */
+.columnId,
+.columnAuthor,
+.columnViews,
+.columnViews,
+.columnLikes,
+.columnComments,
+.authorCell
+ {
+ width: 1%; /* Работает в таблицах как "по контенту" */
+ white-space: nowrap;
+}
+.columnPost {
+  max-width: 612px;
+  font-weight: 600;
+}
+
+.columnActions {
+  width: 60px;
+  text-align: center;
+}
+
+/* Ячейки */
+.idCell {
+  text-align: center;
+}
+
+.postCell {
+  padding: 12px 16px;
+  font-weight: 600;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.postTitle {
+  font-weight: 500;
+  color: #18181b;
+  font-size: 14px;
+}
+
+.postBody {
+  font-size: 12px;
+  color: #71717a;
+}
+
+.authorCell {
+  padding: 12px 16px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.authorName {
+  font-size: 14px;
+  color: #3f3f46;
+}
+
+.viewsCell,
+.likesCell,
+.commentsCell {
+  text-align: center;
+}
+
+/* Кнопка комментариев */
+.commentButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commentButton:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+
+.commentIcon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  max-width: 565px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.closeButton {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #71717a;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  background-color: #f3f4f6;
+  color: #3f3f46;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 1000px) {
+  .overlay {
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  
+  .modal {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+  }
+  
+  .closeButton {
+    top: 10px;
+    right: 10px;
+  }
+}

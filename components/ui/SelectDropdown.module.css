@@ -1,0 +1,77 @@
+.container {
+  position: relative;
+  width: 229px;
+  margin-top: 24px;
+}
+
+.selectButton {
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  border:none;
+  cursor: pointer;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  font-size: 14px;
+  color: #52525B;
+}
+
+.selectButton span:first-child {
+  color: #52525B; /* Черный текст */
+}
+
+.selectButton span:last-child,
+.selectButton .number {
+  color: #006FEE; /* Только число синее */
+  padding: 0 8px 0 8px;
+}
+
+.dropdownList {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  border-top: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  z-index: 100;
+}
+
+.dropdownItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #3f3f46;
+}
+
+.dropdownItem span {
+  color: #3f3f46;
+}
+
+.dropdownItem.active span {
+  color: #006FEE; /* Активное число синее */
+}
+
+.dropdownItem:hover {
+  background-color: #EFF6FF;
+}
+
+.dropdownItem:hover span {
+  color: #006FEE;
+}
+
+.checkmark {
+  color: #006FEE;
+}
+@media (max-width: 1000px) {
+    .container {
+        display: none;
+    }
+}

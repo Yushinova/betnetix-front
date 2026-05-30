@@ -1,0 +1,204 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 565px;
+  height: 824px;
+  padding: 40px 24px;
+}
+
+.titleSection {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  color: #18181B;
+}
+
+/* Аватар 120x120 */
+.avatarSection {
+  margin-bottom: 24px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background: #D4D4D8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatarFallback {
+  font-size: 48px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.errorMessage {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+}
+
+.errorText {
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+.successMessage {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.successText {
+  color: #16a34a;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 4px 0;
+}
+
+.successSubtext {
+  color: #15803d;
+  font-size: 12px;
+  margin: 0;
+}
+
+.form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.formField {
+  width: 100%;
+}
+
+.inputLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #52525B;
+  margin-bottom: 8px;
+}
+
+.age {
+  color: #71717A;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.inputField {
+  width: 100%;
+  height: 42px;
+  border: 1px solid #E4E4E7;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 0 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: white;
+}
+
+.inputField:focus {
+  border-color: #2563eb;
+}
+
+.inputField:disabled {
+  background-color: #f4f4f5;
+  cursor: not-allowed;
+}
+
+select.inputField {
+  cursor: pointer;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 12px;
+}
+
+
+.submitButton {
+  flex: 1;
+  background-color: #D4D4D8;
+  font-weight: 500;
+  padding: 12px 0;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: #b4b4b6;
+}
+
+.submitButton:disabled,
+.cancelButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+.form {
+    width: 100%;
+}
+  .title {
+    font-size: 20px;
+  }
+ .titleSection {
+    width: 100%;
+ }
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .avatarFallback {
+    font-size: 40px;
+  }
+
+  .formFields {
+    gap: 20px;
+  }
+
+  .inputField {
+    height: 32px;
+  }
+  .submitButton {
+    height: 40px;
+    padding: 0;
+  }
+}

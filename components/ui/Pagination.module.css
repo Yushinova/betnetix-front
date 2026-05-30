@@ -1,0 +1,76 @@
+.pagination {
+  display: flex;
+  justify-content:flex-end;
+  margin-top: 24px;
+}
+
+.buttonGroup {
+  gap: 0;
+}
+
+.buttonGroup button {
+  border: 1px solid #2563eb;
+  background: transparent;
+  color: #2563eb;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.buttonGroup button:first-child {
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.buttonGroup button:last-child {
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+
+.buttonGroup button:hover:not(:disabled) {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.pageButton.active {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+.pageButton.active:hover {
+  background-color: #1d4ed8 !important;
+}
+
+.navButton {
+  font-size: 16px;
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  color: #2563eb;
+  font-size: 14px;
+}
+
+/* Разделитель до конца */
+.buttonGroup :global(hr) {
+  height: 100%;
+  margin: 0;
+  background-color: transparent;
+}
+
+@media (max-width: 566px) {
+  .pagination {
+    display: none;
+  }
+}

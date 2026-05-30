@@ -1,0 +1,76 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  /* padding: 0 16px; */
+}
+
+.menuButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3f3f46;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.buttonText {
+  font-size: 12px;
+}
+
+/* Hover эффект */
+.menuButton:hover {
+  color: #006FEE;
+}
+
+.menuButton:hover .icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(98%) saturate(1911%) hue-rotate(211deg) brightness(97%) contrast(101%);
+}
+
+/* Активная кнопка */
+.menuButton.active {
+  color: #006FEE;
+}
+
+.menuButton.active .icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(98%) saturate(1911%) hue-rotate(211deg) brightness(97%) contrast(101%);
+}
+
+/* Показываем только на мобильных */
+@media (min-width: 1000px) {
+  .footer {
+    display: none;
+  }
+}

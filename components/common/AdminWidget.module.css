@@ -1,0 +1,120 @@
+.widget {
+  width: 224px;
+  height: 123px;
+  background: #E6F1FE;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.topSection {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  flex: 1;
+  overflow: hidden;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userEmail {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 120px;
+  opacity: 0.85;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #006FEE;
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.logoutButton {
+  width: 100%;
+  background-color: #CCE3FD;
+  color: #006FEE;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: #006FEE;
+  color: white;
+}
+
+.logoutButton:hover .logoutIcon {
+  filter: brightness(0) invert(1);
+}
+
+.logoutIcon {
+  object-fit: contain;
+}
+
+@media (max-width:1000px) {
+  .widget {
+       width: auto;
+       background-color: transparent;
+       flex-direction: row;
+       margin: 0;
+       padding: 0;
+    }
+    .avatar {
+    width: 32px;
+    height: 32px;
+    }
+    .userName {
+    font-size: 12px;
+    margin: 0;
+    }
+    .bottomSection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .logoutButton {
+        width: 32px;
+        height: 32px;
+        padding: 0 0 0 1px;
+    }
+    .logoutButton span {
+        display: none !important;
+    }
+  .topSection {
+    background-color: transparent;
+
+  }
+}

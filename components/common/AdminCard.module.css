@@ -1,0 +1,120 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 8px 0 0 0;
+  gap: 10px;
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.leftSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #27272A;
+  padding-top: 4px;
+}
+
+.email {
+  font-size: 14px;
+  color: #338EF7;
+  word-break: break-all;
+}
+
+.infoRow {
+  display: flex;
+  gap: 55px;
+  margin-bottom: 8px;
+}
+
+.infoColumn {
+  flex: 1;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: #52525B;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  font-size: 14px;
+  white-space: nowrap;
+  color: #27272A;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menuContainer {
+  position: relative;
+}
+
+.menuButton {
+  color: #71717A;
+  background: transparent;
+}
+
+.menuButton:hover {
+  color: #0a1325;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  z-index: 100;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 160px;
+}
+
+.verticalButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.verticalButtons button {
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 16px;
+  border-radius: 0;
+  background: transparent;
+}
+
+.editButton {
+  color: #3f3f46;
+  width: 100%;
+}
+
+.editButton:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.deleteButton {
+  width: 100%;
+  color: #dc2626;
+}
+
+.deleteButton:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}

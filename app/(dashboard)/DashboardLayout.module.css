@@ -1,0 +1,28 @@
+.dashboardLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #E6F1FE;
+}
+
+.mainContent {
+  flex: 1;
+  margin-left: 288px;
+  padding: 24px;
+  background-color: #E6F1FE;
+}
+
+/* Мобильные стили */
+.mobileContent {
+  margin-left: 0;
+  padding: 68px 0 60px 0;
+}
+
+@media (max-width: 1000px) {
+  .dashboardLayout {
+    display: block;
+  }
+  
+  .mainContent {
+    margin-left: 0;
+  }
+}

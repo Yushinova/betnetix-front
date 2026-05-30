@@ -1,0 +1,5 @@
+@import "../admins/AdminsPage.module.css";
+.mobileTable {
+    padding: 0;
+    margin: 0;
+}

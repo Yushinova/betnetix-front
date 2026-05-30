@@ -1,0 +1,194 @@
+.container {
+  width: 100%;
+  overflow: visible;
+}
+
+.table {
+  width: 100%;
+  background-color: white;
+}
+.table :global(th) {
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  
+}
+.table :global(tbody tr) {
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.table :global(tbody tr:hover) {
+  background-color: #FAFAFA;
+}
+.headerTable {
+  background-color: #FAFAFA;
+  font-size: 14px;
+  font-weight: 600;
+}
+.columnAdmin {
+  width: 45%;
+  text-align: left;
+  font-weight: 600;
+}
+
+.columnEmail {
+  width: 25%;
+  text-align: left;
+}
+
+.columnBirth {
+  width: 20%;
+  text-align: left;
+}
+
+.columnGender {
+  width: 15%;
+  text-align: left;
+}
+
+.columnActions {
+  width: 10%;
+  text-align: center;
+}
+
+.adminCell {
+  padding: 12px 16px;
+}
+
+.adminInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.adminName {
+  font-size: 16px;
+  font-weight: 500;
+  color: #18181b;
+}
+
+.emailCell {
+  color: #338EF7;
+  font-size: 16px;
+  font-weight:400;
+}
+
+.birthCell {
+  color: #3f3f46;
+  font-size: 16px;
+}
+
+.age {
+  margin-left: 6px;
+  color: #71717a;
+  font-size: 14px;
+}
+
+.genderCell {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3f3f46;
+}
+
+.actionsCell {
+  text-align: center;
+}
+
+.loadingCell,
+.emptyCell {
+  text-align: center;
+  padding: 40px;
+  color: #71717a;
+}
+.actionsCell {
+  text-align: center;
+  position: relative;
+}
+
+.menuContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.menuButton {
+  background-color: transparent;
+  color: #71717a;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+.menuIcon {
+  width: 18px;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.menuButton:hover {
+  background-color: #E4E4E7;
+}
+
+/* Выпадающее меню */
+.dropdownMenu {
+  position: absolute;
+  top: 50%;
+  right: 100%; /* 👈 Прижимаем к левому краю кнопки */
+  margin-right: 8px;
+  transform: translateY(-50%); /* 👈 Выравниваем по центру кнопки */
+  z-index: 99999;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-width: 180px;
+}
+
+/* Переопределяем кнопки меню без ButtonGroup */
+.menuButtons {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+}
+
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.editButton {
+  color: #3f3f46;
+}
+
+.editButton:hover {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.deleteButton {
+  color: #dc2626;
+}
+
+.deleteButton:hover {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+
+/* Закрытие меню при клике вне */
+.menuContainer {
+  position: relative;
+}
+

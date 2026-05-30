@@ -1,0 +1,132 @@
+.sidebar {
+  width: 288px;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid #e4e4e7;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 94%;
+  margin-top: 28px;
+}
+/* Контейнер для логотипа */
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 100px;
+  height: 25px;
+  position: relative;
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+/* Навигация */
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 42px 30px;
+}
+
+/* Кнопка меню */
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3f3f46;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Иконка */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  transition: all 0.2s ease;
+}
+
+/* Текст кнопки */
+.buttonText {
+  flex: 1;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+/* Hover эффект - фон */
+.menuButton:hover {
+  background-color: #eff6ff;
+}
+
+/* Hover эффект - текст */
+.menuButton:hover .buttonText {
+  color: #006FEE;
+}
+
+/* Hover эффект - иконка */
+.menuButton:hover .icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(98%) saturate(1911%) hue-rotate(211deg) brightness(97%) contrast(101%);
+}
+
+/* Активная кнопка - фон */
+.menuButton.active {
+  background-color: #CCE3FD;
+}
+
+/* Активная кнопка - текст */
+.menuButton.active .buttonText {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Активная кнопка - иконка */
+.menuButton.active .icon {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(98%) saturate(1911%) hue-rotate(211deg) brightness(97%) contrast(101%);
+}
+.widgetWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}

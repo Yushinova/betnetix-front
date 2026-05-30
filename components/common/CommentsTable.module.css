@@ -1,0 +1,103 @@
+.container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  background-color: white;
+}
+
+.table :global(th) {
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.table :global(tbody tr) {
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.table :global(tbody tr:hover) {
+  background-color: #FAFAFA;
+}
+
+.headerTable {
+  background-color: #FAFAFA;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Колонки */
+.columnComment {
+  width: 70%;
+  text-align: left;
+  font-weight: 600;
+}
+
+.columnAuthor {
+  width: 30%;
+  text-align: left;
+}
+
+/* Ячейка комментария */
+.commentCell {
+  padding: 16px;
+}
+
+.commentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.commentText {
+  font-size: 16px;
+  color: #18181b;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.commentDate {
+  font-size: 14px;
+  color: #71717a;
+}
+
+/* Ячейка автора */
+.authorCell {
+  padding: 12px 16px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.authorName {
+  font-size: 16px;
+  font-weight: 500;
+  color: #18181b;
+  margin-bottom: 2px;
+}
+
+.authorEmail {
+  font-size: 14px;
+  color: #71717a;
+}
+
+/* Состояния */
+.loadingCell,
+.emptyCell {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #71717a;
+}
