@@ -28,7 +28,7 @@ export default function LoginPage() {
       <div className={styles.mobileHeader}>
         <div className="w-[100px] h-[25px] relative">
           <Image 
-            src="/BTX•.png" 
+            src="https://storage.yandexcloud.net/backet-online-storage/test/BTX%E2%80%A2.png" 
             alt="Logo" 
             width={100} 
             height={25}
