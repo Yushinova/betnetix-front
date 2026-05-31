@@ -88,7 +88,7 @@ export default function CommentsTable({
                         <Avatar className={styles.avatar}>
                           <Avatar.Image 
                             alt={`${comment.user?.firstName} ${comment.user?.lastName}`}
-                            src={comment.user?.image || "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"}
+                            src={comment.user?.image || "https://storage.yandexcloud.net/backet-online-storage/test/avatar.png"}
                           />
                           <Avatar.Fallback>
                             {comment.user?.firstName?.[0]}{comment.user?.lastName?.[0]}

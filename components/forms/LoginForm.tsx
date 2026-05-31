@@ -42,7 +42,7 @@ export default function LoginCard() {
         {/* Логотип - только на десктопе */}
         <div className={styles.desktopLogo}>
           <Image 
-            src="/BTX•.png" 
+            src="https://storage.yandexcloud.net/backet-online-storage/test/BTX%E2%80%A2.png" 
             alt="Logo" 
             width={100} 
             height={25}

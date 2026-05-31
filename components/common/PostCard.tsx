@@ -71,15 +71,16 @@ export default function PostCard({ post, onViewComments }: PostCardProps) {
         {/* Нижний див со статистикой */}
         <div className={styles.statsRow}>
           <div className={styles.statItem}>
-            <img src="/eye.png" alt="Просмотры" className={styles.statIcon} />
+            <img src="https://storage.yandexcloud.net/backet-online-storage/test/eye.png"
+            alt="Просмотры" className={styles.statIcon} />
             <span className={styles.statValue}>{post.views || 0}</span>
           </div>
           <div className={styles.statItem}>
-            <img src="/heart.png" alt="Лайки" className={styles.statIcon} />
+            <img src="https://storage.yandexcloud.net/backet-online-storage/test/heart.png" alt="Лайки" className={styles.statIcon} />
             <span className={styles.statValue}>{post.reactions?.likes || 0}</span>
           </div>
           <div className={styles.statItem}>
-            <img src="/comment.png" alt="Комментарии" className={styles.statIcon} />
+            <img src="https://storage.yandexcloud.net/backet-online-storage/test/comment.png" alt="Комментарии" className={styles.statIcon} />
             <span className={styles.statValue}>{post.commentsCount || 0}</span>
           </div>
         </div>

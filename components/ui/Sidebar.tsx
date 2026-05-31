@@ -21,22 +21,22 @@ export default function Sidebar() {
     {
       id: "posts",
       label: "Публикации",
-      icon: "/posts.png",
-      iconActive: "/posts-active.png",
+      icon: "https://storage.yandexcloud.net/backet-online-storage/test/posts.png",
+      iconActive: "https://storage.yandexcloud.net/backet-online-storage/test/posts-active.png",
       path: "/posts"
     },
     {
       id: "admins",
       label: "Администраторы",
-      icon: "/admins.png",
-      iconActive: "/admins-active.png",
+      icon: "https://storage.yandexcloud.net/backet-online-storage/test/admins.png",
+      iconActive: "https://storage.yandexcloud.net/backet-online-storage/test/admins-active.png",
       path: "/admins"
     },
     {
       id: "users",
       label: "Пользователи",
-      icon: "/users.png",
-      iconActive: "/users-active.png",
+      icon: "https://storage.yandexcloud.net/backet-online-storage/test/users.png",
+      iconActive: "https://storage.yandexcloud.net/backet-online-storage/test/users-active.png",
       path: "/users"
     }
   ];
@@ -54,7 +54,7 @@ export default function Sidebar() {
         <div className={styles.logoContainer}>
           <div className={styles.logo}>
             <Image 
-              src="/BTX•.png" 
+              src="https://storage.yandexcloud.net/backet-online-storage/test/BTX%E2%80%A2.png" 
               alt="BTX Logo" 
               width={100} 
               height={25}

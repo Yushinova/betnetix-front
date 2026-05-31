@@ -48,6 +48,9 @@
 /* Мобильная адаптация */
 @media (max-width: 1000px) {
   .overlay {
+    padding: 0 !important;
+    width: 100wv;
+    height: 100wv;
     align-items: stretch;
     justify-content: stretch;
   }
@@ -59,7 +62,7 @@
     max-height: none;
     border-radius: 0;
   }
-  
+
   .closeButton {
     top: 10px;
     right: 10px;

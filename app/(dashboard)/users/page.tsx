@@ -9,7 +9,7 @@ import SelectDropdown from "@/components/ui/SelectDropdown";
 import ConfirmModal from "@/components/ui/ConfirmModal";
 import CreateAdminForm from "@/components/forms/CreateAdminForm";
 import UserCard from "@/components/common/UserCard";
-import styles from "./UsersPage.module.css";
+import styles from "@/app/(dashboard)/admins/AdminsPage.module.css";
 
 export default function UsersPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +22,7 @@ export default function UsersPage() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 566);
+      setIsMobile(window.innerWidth <= 999);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);

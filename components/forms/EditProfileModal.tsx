@@ -134,7 +134,7 @@ export default function EditProfileModal({ isOpen, onClose, userId, adminId, typ
 
         <div className={styles.avatar}>
         <img 
-            src={avatarImage || "/avatar.png"} 
+            src={avatarImage || "https://storage.yandexcloud.net/backet-online-storage/test/avatar.png"} 
             alt={fullName}
             className={styles.avatarImage}
         />

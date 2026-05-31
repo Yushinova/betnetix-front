@@ -17,7 +17,7 @@ export default function DashboardLayout({
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 566);
+      setIsMobile(window.innerWidth <= 1000);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);

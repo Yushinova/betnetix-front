@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Avatar, Form, Button } from "@heroui/react";
 import { useAuthStore } from "@/stores/authStore";
-import { formatDate } from "@/utils/helpers";
+import { formatDate, parseFullName } from "@/utils/helpers";
 import type { Admin } from "@/types/auth";
-import ChangePasswordModal from "@/components/forms/ChangePasswordForm"; // 👈 Импорт
+import ChangePasswordModal from "@/components/forms/ChangePasswordForm";
 import styles from "./page.module.css";
 
 interface FormData {
   id: number;
-  firstName: string;
-  lastName: string;
+  fullName: string;
   email: string;
   birthDate: string;
   gender: 'male' | 'female';
@@ -26,11 +25,10 @@ export default function EditProfilePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false); // 👈 Состояние
+  const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     id: 0,
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     birthDate: "",
     gender: "male",
@@ -50,8 +48,7 @@ export default function EditProfilePage() {
     if (admin) {
       setFormData({
         id: admin.id,
-        firstName: admin.firstName,
-        lastName: admin.lastName,
+        fullName: `${admin.firstName} ${admin.lastName}`.trim(),
         email: admin.email,
         birthDate: admin.birthDate || "",
         gender: admin.gender,
@@ -64,8 +61,7 @@ export default function EditProfilePage() {
         const adminData = JSON.parse(storedAdmin);
         setFormData({
           id: adminData.id,
-          firstName: adminData.firstName,
-          lastName: adminData.lastName,
+          fullName: `${adminData.firstName} ${adminData.lastName}`.trim(),
           email: adminData.email,
           birthDate: adminData.birthDate || "",
           gender: adminData.gender,
@@ -93,9 +89,11 @@ export default function EditProfilePage() {
     e.preventDefault();
     setIsSaving(true);
     
+    const { firstName, lastName } = parseFullName(formData.fullName);
+    
     const updateData: Partial<Admin> & { role?: 'admin' | 'user' } = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
+      firstName,
+      lastName,
       email: formData.email,
       birthDate: formData.birthDate,
       gender: formData.gender,
@@ -107,14 +105,16 @@ export default function EditProfilePage() {
     
     await new Promise(resolve => setTimeout(resolve, 500));
     setIsSaving(false);
-    router.back();
   };
 
   const handleChangePassword = () => {
-    setIsPasswordModalOpen(true); // 👈 Открываем модальное окно
+    setIsPasswordModalOpen(true);
   };
 
   const age = calculateAge(formData.birthDate);
+  const displayName = formData.fullName || "Пользователь";
+  const firstNameInitial = displayName.split(" ")[0]?.[0] || "";
+  const lastNameInitial = displayName.split(" ")[1]?.[0] || "";
 
   if (isLoading) {
     return <div className={styles.loading}>Загрузка...</div>;
@@ -133,11 +133,11 @@ export default function EditProfilePage() {
             <div className={styles.headerLeft}>
               <Avatar className={styles.avatar}>
                 <Avatar.Image 
-                  alt={`${formData.firstName} ${formData.lastName}`}
-                  src={formData.image || "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"}
+                  alt={displayName}
+                  src={formData.image || "https://storage.yandexcloud.net/backet-online-storage/test/avatar.png"}
                 />
                 <Avatar.Fallback>
-                  {formData.firstName?.[0]}{formData.lastName?.[0]}
+                  {firstNameInitial}{lastNameInitial}
                 </Avatar.Fallback>
               </Avatar>
               <div className={styles.userInfo}>
@@ -145,7 +145,7 @@ export default function EditProfilePage() {
                   {formData.role === 'admin' ? 'Администратор' : 'Пользователь'}
                 </div>
                 <div className={styles.name}>
-                  {formData.firstName} {formData.lastName}
+                  {displayName}
                 </div>
                 <div className={styles.email}>{formData.email}</div>
                 <div className={styles.birthDate}>
@@ -165,31 +165,17 @@ export default function EditProfilePage() {
             <Form className={styles.form} onSubmit={handleSubmit}>
               <div className={isMobile ? styles.mobileColumn : styles.formRow}>
                 <div className={styles.formField}>
-                  <label className={styles.inputLabel}>Имя</label>
+                  <label className={styles.inputLabel}>ФИО</label>
                   <input
                     type="text"
                     className={styles.nativeInput}
-                    value={formData.firstName}
-                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({...formData, fullName: e.target.value})}
                     disabled={isSaving}
-                    placeholder="Имя"
+                    placeholder="Иванов Иван Иванович"
                   />
                 </div>
 
-                <div className={styles.formField}>
-                  <label className={styles.inputLabel}>Фамилия</label>
-                  <input
-                    type="text"
-                    className={styles.nativeInput}
-                    value={formData.lastName}
-                    onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                    disabled={isSaving}
-                    placeholder="Фамилия"
-                  />
-                </div>
-              </div>
-
-              <div className={isMobile ? styles.mobileColumn : styles.formRow}>
                 <div className={styles.formField}>
                   <label className={styles.inputLabel}>Email</label>
                   <input
@@ -201,7 +187,9 @@ export default function EditProfilePage() {
                     placeholder="example@mail.com"
                   />
                 </div>
+              </div>
 
+              <div className={isMobile ? styles.mobileColumn : styles.formRow}>
                 <div className={styles.formField}>
                   <label className={styles.inputLabel}>Дата рождения</label>
                   <input
@@ -212,9 +200,7 @@ export default function EditProfilePage() {
                     disabled={isSaving}
                   />
                 </div>
-              </div>
 
-              <div className={isMobile ? styles.mobileColumn : styles.formRow}>
                 <div className={styles.formField}>
                   <label className={styles.inputLabel}>Пол</label>
                   <select
@@ -227,7 +213,9 @@ export default function EditProfilePage() {
                     <option value="female">Женский</option>
                   </select>
                 </div>
+              </div>
 
+              <div className={isMobile ? styles.mobileColumn : styles.formRow}>
                 <div className={styles.formField}>
                   <label className={styles.inputLabel}>Роль</label>
                   <select
@@ -240,6 +228,8 @@ export default function EditProfilePage() {
                     <option value="user">Пользователь</option>
                   </select>
                 </div>
+
+                <div className={styles.formField}></div>
               </div>
 
               <Button 
@@ -254,7 +244,7 @@ export default function EditProfilePage() {
         </div>
       </div>
 
-      {/* 👇 Модальное окно смены пароля */}
+      {/*Модальное окно смены пароля */}
       <ChangePasswordModal 
         isOpen={isPasswordModalOpen} 
         onClose={() => setIsPasswordModalOpen(false)}

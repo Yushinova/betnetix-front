@@ -22,7 +22,7 @@ export default function AdminPage() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 566);
+      setIsMobile(window.innerWidth <= 999);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -115,7 +115,7 @@ export default function AdminPage() {
 
       {isMobile ? (
         <div className={styles.mobileTable}>
-          {filteredAdmins.map((admin) => (
+           {filteredAdmins.map((admin) => (
             <AdminCard
               key={admin.id}
               admin={admin}

@@ -33,7 +33,8 @@ export default function AdminWidget() {
         </div>
         <div className={styles.bottomSection}>
           <button onClick={handleLogout} className={styles.logoutButton}>
-            <img src="/exit.png" alt="Выход" width={20} height={20} />
+            <img src="https://storage.yandexcloud.net/backet-online-storage/test/exit.png"
+             alt="Выход" width={20} height={20} />
             <span>Выход</span>
           </button>
         </div>
@@ -47,7 +48,7 @@ export default function AdminWidget() {
         <Avatar className={styles.avatar}>
           <Avatar.Image 
             alt={`${admin.firstName} ${admin.lastName}`}
-            src={admin.image || "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"}
+            src={admin.image || "https://storage.yandexcloud.net/backet-online-storage/test/avatar.png"}
           />
           <Avatar.Fallback>
             {admin.firstName?.[0]}{admin.lastName?.[0]}

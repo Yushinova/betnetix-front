@@ -10,7 +10,7 @@ export default function MobileHeader() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Image 
-          src="/BTX•.png" 
+          src="https://storage.yandexcloud.net/backet-online-storage/test/BTX%E2%80%A2.png" 
           alt="BTX Logo" 
           width={74} 
           height={18}

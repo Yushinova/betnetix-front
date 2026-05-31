@@ -30,7 +30,7 @@
 }
 
 /* Скрываем на десктопе, показываем только на мобильных */
-@media (min-width:1000px) {
+@media (min-width: 999px) {
   .header {
     display: none;
   }

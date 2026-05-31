@@ -47,7 +47,7 @@ export default function PostsTable({
         aria-label={`Сортировать по ${label}`}
       >
         <img 
-          src="/sort.png"
+          src="https://storage.yandexcloud.net/backet-online-storage/test/sort.png"
           alt="Сортировка"
           width="16"
           height="16"
@@ -195,7 +195,7 @@ export default function PostsTable({
                       <div className={styles.authorInfo}>
                         <Avatar className={styles.avatar}>
                           <Avatar.Image 
-                            src={post.authorImage || "https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/blue.jpg"}
+                            src={post.authorImage || "https://storage.yandexcloud.net/backet-online-storage/test/avatar.png"}
                             alt={post.authorName}
                           />
                           <Avatar.Fallback>
@@ -222,7 +222,7 @@ export default function PostsTable({
                         onClick={() => handleViewComments(post.id)}
                       >
                         <img 
-                          src="/arrow-circle-right.png"
+                          src="https://storage.yandexcloud.net/backet-online-storage/test/arrow-circle-right.png"
                           alt="Комментарии"
                           width={24}
                           height={24}

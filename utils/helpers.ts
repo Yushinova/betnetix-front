@@ -6,3 +6,19 @@ export const formatDate = (dateString: string) => {
   const year = date.getFullYear();
   return `${day}.${month}.${year}`;
 };
+
+export const parseFullName = (fullName: string): { firstName: string; lastName: string } => {
+  const parts = fullName.trim().split(/\s+/);
+  
+  if (parts.length === 0) {
+    return { firstName: "", lastName: "" };
+  }
+  
+  if (parts.length === 1) {
+    return { firstName: parts[0], lastName: "" };
+  }
+   const firstName = parts[0];
+  const lastName = parts[parts.length - 1];
+  
+  return { firstName, lastName };
+};

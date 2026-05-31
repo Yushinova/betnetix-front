@@ -9,6 +9,9 @@
   justify-content: space-between;
   color: white;
 }
+.widget:hover{
+  background: #FAFAFA;
+}
 
 .topSection {
   display: flex;
@@ -87,10 +90,14 @@
 @media (max-width:1000px) {
   .widget {
        width: auto;
+       height: auto;
        background-color: transparent;
        flex-direction: row;
        margin: 0;
        padding: 0;
+    }
+    .widget:hover{
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     .avatar {
     width: 32px;

@@ -58,7 +58,7 @@ export default function CreateAdminForm({ onSuccess, title = "Добавлени
         <div className={styles.avatarContainer}>
           <div className={styles.avatar}>
             <Image 
-              src="/avatar.png"
+              src="https://storage.yandexcloud.net/backet-online-storage/test/avatar.png"
               alt="Avatar"
               width={120}
               height={120}

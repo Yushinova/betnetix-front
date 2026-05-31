@@ -20,22 +20,22 @@ export default function MobileFooter() {
     {
       id: "posts",
       label: "Публикации",
-      icon: "/posts.png",
-      iconActive: "/posts-active.png",
+      icon: "https://storage.yandexcloud.net/backet-online-storage/test/posts.png",
+      iconActive: "https://storage.yandexcloud.net/backet-online-storage/test/posts-active.png",
       path: "/posts"
     },
     {
       id: "admins",
       label: "Администраторы",
-      icon: "/admins.png",
-      iconActive: "/admins-active.png",
+      icon: "https://storage.yandexcloud.net/backet-online-storage/test/admins.png",
+      iconActive: "https://storage.yandexcloud.net/backet-online-storage/test/admins-active.png",
       path: "/admins"
     },
     {
       id: "users",
       label: "Пользователи",
-      icon: "/users.png",
-      iconActive: "/users-active.png",
+      icon: "https://storage.yandexcloud.net/backet-online-storage/test/users.png",
+      iconActive: "https://storage.yandexcloud.net/backet-online-storage/test/users-active.png",
       path: "/users"
     }
   ];
